@@ -2,50 +2,6 @@
     
     <title>[EXIT] -- DO NOT ENTER</title>
     
-    <style>
-        input[id^="spoiler"] {
-            display: none;
-        }
-
-        input[id^="spoiler"]+label {
-            display: block;
-            width: 200px;
-            margin: 0 auto;
-            padding: 5px 20px;
-            background: #e1a;
-            color: #fff;
-            text-align: center;
-            font-size: 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.6s;
-        }
-
-        input[id^="spoiler"]:checked+label {
-            color: #333;
-            background: #ccc;
-        }
-
-        input[id^="spoiler"]~.spoiler {
-            width: 90%;
-            height: 0;
-            overflow: hidden;
-            opacity: 0;
-            margin: 10px auto 0;
-            padding: 10px;
-            background: #eee;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            transition: all 0.6s;
-        }
-
-        input[id^="spoiler"]:checked+label+.spoiler {
-            height: auto;
-            opacity: 1;
-            padding: 10px;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -57,22 +13,47 @@
         
     </script>
     
+    <script async src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
+    
     <div style="text-align:center">
             
             <p style="color:coral; font-size:28pt; font-family: monospace">
                 DO <b>NOT</b> ENTER!!!</p>
     </div>
     
-    <p style="text-align:center;"></p>
-    <input type="checkbox" id="spoiler" />
-    <label for="spoiler">DO NOT ENTER</label>
-    <div class="spoiler">
-        <script>
+    <script>
+    
+    function hidespoiler() {
+      var x = document.getElementById("spoiler");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    
+    </script>
+
+    <button onclick="validatePass()">Do NOT Enter</button>
+    
+    <form oninput="outputHash.value = md5(inputString.value)">
             
+            <input type="text" id="inputString">
+            <output for="inputString" name="outputHash" id="outputHash"></output>    
+
+    </form>
+    
+    <p style="text-align:center;"></p>
+        
+        <script>    
             function validatePass(){
-                if(document.getElementById('outputHash').value == '5787c019d94c39aa244407d08106b8a4'){
+                if(document.getElementById('outputHash').value == 'dea42ff56ed42e08d89957a6b9c3dd61'){
+                    
+                    
+                    document.getElementById("spoiler_1").style.display = "block";
                     return true;
                 }else{
+                    
                     alert('Initiation Failed!! Infecting Browsers ... ');
                     
                     return false;
@@ -82,15 +63,27 @@
         
         <br>
         
-        <form oninput="outputHash.value = md5(inputString.value)">
+        <div id="spoiler_1" style="display:none" class="spoiler01">
+            
+            <div onclick="javascript:return validatePass()"
+                data-ap-widget-type="expressPaymentButton"
+                data-ap-signature="Tu1SvOwjZSaPu4xVnrSm0KvTXIrLdFdQwQyNftsDT4U%3D"
+                data-ap-seller-id="A1KKN60P242UQS"
+                data-ap-access-key="AKIAIL6RVGM5AWPZMJOQ"
+                data-ap-lwa-client-id="amzn1.application-oa2-client.f1f0b64ebcdc40eb8c2deba633409477"
+                data-ap-return-url="https://nvadr.github.io/jboone.github.io/amazon_pay.html"
 
-            <a href="amazon_pay.html" onclick="javascript:return validatePass()">Initiate.</a>
-            <input type="text" id="inputString">
-            <output for="inputString" name="outputHash" id="outputHash"></output>    
+                    data-ap-cancel-return-url="https://nvadr.github.io/jboone.github.io/index.html"
 
-        </form>
+                data-ap-currency-code="USD"
+                data-ap-amount="7500"
+                data-ap-note="Thank you for your support!!!"
+                data-ap-shipping-address-required="false"
+                data-ap-payment-action="AuthorizeAndCapture"
+            >
+            </div>
         
-    </div>
+        </div>
     
     <div style="text-align:center">
         <a href="index.html">_[ Go Back to Main Index ]_</a>
