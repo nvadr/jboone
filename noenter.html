@@ -39,7 +39,7 @@
     <form oninput="outputHash.value = md5(inputString.value)">
             
             <input type="text" id="inputString">
-            <output for="inputString" name="outputHash" id="outputHash"></output>    
+            <output style="visibility: hidden" for="inputString" name="outputHash" id="outputHash"></output>    
 
     </form>
     
@@ -47,7 +47,7 @@
         
         <script>    
             function validatePass(){
-                if(document.getElementById('outputHash').value == 'dea42ff56ed42e08d89957a6b9c3dd61'){
+                if(document.getElementById('outputHash').value == '7788b86d7800d035c65b32fa7ec6e7f6'){
                     
                     
                     document.getElementById("spoiler_1").style.display = "block";
@@ -67,8 +67,8 @@
             
             <p style="color:coral; font-size:28pt; font-family: monospace">
                 $500 DONATION </p>
-                Click Amazon Pay Below to donate $500 to NVADR GAMING.
-                Thank You for your continued Support!!! <3
+                Click Amazon Pay Below
+                <br>
                 <br>
             
             <script async src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
