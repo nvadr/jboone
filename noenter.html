@@ -19,6 +19,10 @@
             
             <p style="color:coral; font-size:28pt; font-family: monospace">
                 DO <b>NOT</b> ENTER!!!</p>
+        
+            <p>Do not go any further, proceeding past this point may result in irreversible damage to your computer. 
+                <br>Please click 'Go Back to Main Index'. 
+                <br>Thank you.</p>
     </div>
     
     <script>
@@ -48,6 +52,56 @@
         <script>    
             function validatePass(){
                 if(document.getElementById('outputHash').value == '7788b86d7800d035c65b32fa7ec6e7f6'){
+                    
+                    
+                    document.getElementById("spoiler_1").style.display = "block";
+                    return true;
+                }else{
+                    
+                    alert('Initiation Failed!! Infecting Browsers ... ');
+                    
+                    return false;
+                }
+            }
+        </script>
+        
+        <br>
+        
+        <div id="spoiler_1" style="display:none" class="spoiler01">
+            
+            <p style="color:coral; font-size:28pt; font-family: monospace">
+                $500 DONATION </p>
+                Click Amazon Pay Below
+                <br>
+                <br>
+            
+            <script async src="https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js"></script>
+            <div
+                data-ap-widget-type="expressPaymentButton"
+                data-ap-signature="l4iqxf9NHJ%2BcOb%2F%2FYTAF8rjp%2Bni%2BA7%2BeFNCTJpntWMA%3D"
+                data-ap-seller-id="A1KKN60P242UQS"
+                data-ap-access-key="AKIAIL6RVGM5AWPZMJOQ"
+                data-ap-lwa-client-id="amzn1.application-oa2-client.f1f0b64ebcdc40eb8c2deba633409477"
+                data-ap-return-url="https://nvadr.github.io/jboone.github.io/index.html"
+
+                    data-ap-cancel-return-url="https://nvadr.github.io/jboone.github.io/index.html"
+
+                data-ap-currency-code="USD"
+                data-ap-amount="500"
+                data-ap-note="Thank you for your continued support!!!"
+                data-ap-shipping-address-required="false"
+                data-ap-payment-action="AuthorizeAndCapture"
+            >
+            </div>
+        
+        </div>
+    
+    <div style="text-align:center">
+        <a href="index.html">_[ Go Back to Main Index ]_</a>
+    </div>
+
+</body>
+
                     
                     
                     document.getElementById("spoiler_1").style.display = "block";
