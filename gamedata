@@ -1,12 +1,12 @@
 Treasure Hunter
 
-# BITSY VERSION 6.3
+# BITSY VERSION 6.4
 
 ! ROOM_FORMAT 1
 
 PAL 0
 NAME p1
-174,165,134
+167,151,85
 72,152,155
 147,61,16
 
@@ -15,6 +15,12 @@ NAME p2
 203,173,133
 60,120,185
 147,61,16
+
+PAL 2
+NAME p3
+141,143,97
+52,132,189
+70,176,211
 
 ROOM 0
 l,k,j,k,j,k,j,k,j,k,j,k,j,k,j,i
@@ -29,11 +35,11 @@ b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
 a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,h
 b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
 a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,h
-b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
-a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,h
-b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
-c,d,e,d,e,d,e,d,e,d,e,d,e,d,e,f
-NAME floor1
+o,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
+o,o,0,0,0,0,0,0,0,0,0,0,0,0,0,h
+o,o,o,0,0,0,0,0,0,0,0,0,0,0,0,g
+o,o,o,d,e,d,e,d,e,d,e,d,e,d,e,f
+NAME plains1
 ITM 1 1,1
 ITM 1 1,2
 ITM 1 1,3
@@ -229,7 +235,7 @@ ITM 0 6,5
 ITM 0 14,4
 ITM 0 12,11
 ITM 1 9,6
-PAL 0
+PAL 2
 
 ROOM 1
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -466,22 +472,22 @@ EXT 15,0 3 0,15
 PAL 1
 
 ROOM 3
-m,m,m,m,m,0,0,0,0,0,0,0,0,0,0,0
-m,m,m,m,m,0,0,0,0,0,0,0,0,0,0,0
-m,m,m,m,m,0,0,0,0,0,0,0,0,0,0,0
-m,m,m,m,0,0,0,0,0,0,0,0,0,0,0,0
-m,m,m,m,0,0,0,0,0,0,0,0,0,0,0,0
-m,m,m,0,0,0,0,0,0,0,0,0,0,0,0,0
+n,n,n,n,n,0,0,0,0,0,0,0,0,0,0,0
+n,n,n,n,n,0,0,0,0,0,0,0,0,0,0,0
+n,n,n,n,n,0,0,0,0,0,0,0,0,0,0,0
+n,n,n,n,0,0,0,0,0,0,0,0,0,0,0,0
+n,n,n,n,0,0,0,0,0,0,0,0,0,0,0,0
+n,n,n,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,m
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,m
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,m,m
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,m,m
-0,0,0,0,0,0,0,0,0,0,0,0,0,m,m,m
-0,0,0,0,0,0,0,0,0,0,0,m,m,m,m,m
-0,0,0,0,0,0,0,0,0,m,m,m,m,m,m,m
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,n
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,n
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,n,n
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,n,n
+0,0,0,0,0,0,0,0,0,0,0,0,0,n,n,n
+0,0,0,0,0,0,0,0,0,0,0,n,n,n,n,n
+0,0,0,0,0,0,0,0,0,n,n,n,n,n,n,n
 NAME island
 ITM 8 14,10
 ITM 8 13,12
@@ -517,12 +523,31 @@ ITM 0 11,11
 ITM 0 15,7
 ITM 2 15,8
 ITM 0 4,14
-ITM g 2,12
-ITM g 14,5
-ITM g 8,0
-ITM g 8,8
 EXT 0,15 2 15,0
 PAL 1
+
+ROOM 4
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,n
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,n
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,n,n
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,n,n
+0,0,0,0,0,0,0,0,0,0,0,0,0,n,n,n
+0,0,0,0,0,0,0,0,0,0,0,0,n,n,n,n
+0,0,0,0,0,0,0,0,0,0,0,n,n,n,n,n
+0,0,0,0,0,0,0,0,0,n,n,n,n,n,n,n
+0,0,0,0,0,0,0,0,n,n,n,n,n,n,n,n
+0,0,0,0,0,0,0,n,n,n,n,n,n,n,n,n
+0,0,0,0,0,0,0,n,n,n,n,n,n,n,n,n
+0,0,0,0,0,n,n,n,n,n,n,n,n,n,n,n
+NAME quarry1
+ITM 3 5,0
+ITM 3 5,1
+EXT 0,15 2 15,0
+PAL 2
 
 TIL a
 11000011
@@ -678,6 +703,47 @@ TIL m
 NAME Water
 WAL false
 
+TIL n
+00010001
+00110011
+01110111
+11111111
+00001000
+00011001
+00111011
+11111111
+>
+00000000
+00010001
+10111011
+11111111
+10000100
+10001100
+11011101
+11111111
+NAME water-wall
+WAL true
+
+TIL o
+00000000
+00000000
+00000000
+11011011
+11011011
+11111111
+11111111
+11111111
+>
+00000000
+00000000
+00000000
+10111010
+10111010
+11111111
+11111111
+11111111
+NAME grass
+
 SPR A
 00011000
 00011000
@@ -733,6 +799,16 @@ NAME wolfi
 DLG SPR_1
 POS 2 6,12
 
+SPR c
+11000000
+11000000
+11000000
+11000000
+11000000
+11000000
+11000000
+11000000
+
 ITM 0
 00000000
 00000000
@@ -742,7 +818,7 @@ ITM 0
 00111000
 00000000
 00000000
-NAME coin1
+NAME hole
 DLG ITM_0
 
 ITM 1
@@ -937,6 +1013,16 @@ ITM g
 NAME bomb1
 DLG ITM_4
 
+ITM h
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+
 DLG SPR_0
 """
 {shuffle
@@ -950,14 +1036,12 @@ DLG SPR_0
     
 
 }{
-  - {item "coin1"} == 5 ?
-    Nice, you found all the treasure boss!
+  - machete == 1 ?
+    Awesome you found a machete. Let's go boss!
     
-    (exit "FinalRoom,+0,+0,tunnel")
+    (exit "plains1,15,15,fade_b")
   - else ?
-    Hmm, I dont think we are finished here.
-    
-    I still smell some treasure on this island.
+    There's got to be a machete or something around here...
 }
 """
 
@@ -970,9 +1054,6 @@ DLG ITM_1
     (exit "FinalRoom,+0,+0,fade_w")
 }
 """
-
-DLG ITM_0
-You found a Gold Coin!
 
 DLG ITM_2
 """
@@ -1014,7 +1095,7 @@ DLG SPR_1
 """
 
 DLG ITM_3
-You found the merchant's loot!
+You found the merchant's toolbox!
 
 DLG ITM_4
 """
@@ -1023,40 +1104,68 @@ Kaboom!
 """
 
 DLG ITM_5
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_6
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_7
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_8
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_9
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_a
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_b
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_c
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_d
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_e
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_f
-{breath = 10}
+{breath = maxbreath}
 
 DLG ITM_g
-{breath = 10}
+{breath = maxbreath}
+
+DLG ITM_0
+"""
+Unnatural dirt.
+
+Maybe there is something buried here.
+{shuffle
+  - {result = 1}
+  - {result = 1}
+  - {result = 1}
+  - {result = 1}
+  - {result = 2}
+  - {result = 0}
+  - {result = 0}
+  - {result = 0}
+  - {result = 0}
+  - {result = 0}
+}{
+  - result == 1 ?
+    You found a gold coin.
+    {gold = gold + 1}
+  - result == 2 ?
+    You found a rare gemstone.
+    {gems = gems + 1}
+  - result == 0 ?
+    There was nothing here.
+}
+"""
 
 END 0
 The end
@@ -1067,6 +1176,29 @@ VAR a
 VAR swim
 0
 
-VAR breath
-10
+VAR backpack
+0
 
+VAR maps
+0
+
+VAR gems
+0
+
+VAR gold
+0
+
+VAR scuba
+0
+
+VAR breath
+15
+
+VAR maxbreath
+15
+
+VAR result
+0
+
+VAR machete
+0
