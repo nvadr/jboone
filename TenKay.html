@@ -271,7 +271,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;/map&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="196.66666666666674,97.50000000000009" size="100,100">&lt;!-- /// Let&#39;s setup our variables here \\\ --&gt;
 
 &lt;&lt;set $playscore to 500&gt;&gt; /* minimum First score */
-&lt;&lt;set $scoretowin to 4999&gt;&gt; /* player has to score higher to win */
+&lt;&lt;set $scoretowin to 9999&gt;&gt; /* player has to score higher to win */
 &lt;&lt;set $canroll to 0&gt;&gt; /* can the player roll? True (1) or False (0) */
 &lt;&lt;set $playerturn to 0&gt;&gt; /* holds the # of current roller. */
 &lt;&lt;set $player to []&gt;&gt; /* set up the player struct */
@@ -1010,6 +1010,7 @@ state.restart();
 
   &lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;rulespage&quot;&gt;&lt;span class=&quot;scorechart&quot;&gt;&lt;span class=&quot;colorsize2&quot;&gt;--Dice Values--&lt;/span&gt;
+  &lt;div&gt;&lt;span class=&quot;color2&quot;&gt;*Saved dice are not evaluated in scoring combos on new rolls.*&lt;/span&gt;&lt;/div&gt;
     &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;Straight&#39;&lt;/span&gt;&lt;span class=&quot;color2&quot;&gt; : 1,2,3,4,5,6 : 2000 points *first roll only*&lt;/span&gt;&lt;/div&gt;
     &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;Triplets&#39; &lt;/span&gt;&lt;span class=&quot;color2&quot;&gt;: Three different pairs of dice : 2000 points *first roll only*&lt;/span&gt;&lt;/div&gt;
     &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;6 of a kind&#39;&lt;/span&gt;&lt;span class=&quot;color2&quot;&gt; : Six of the same dice : 3000 points *first roll only*&lt;/span&gt;&lt;/div&gt;
@@ -1018,11 +1019,11 @@ state.restart();
     &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;4 of a kind&#39;&lt;/span&gt;&lt;span class=&quot;color2&quot;&gt; : Four of the same dice : 1000 points
 &lt;/span&gt;&lt;/div&gt;
     &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;3 of a kind&#39;&lt;/span&gt;&lt;span class=&quot;color2&quot;&gt; : Three of the same dice : 100 points times dice value.&lt;/span&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;1&#39;s&#39; &lt;/span&gt;&lt;span class=&quot;color2&quot;&gt;: Six of the same dice : 100 points each *3 of a kind = 500 points*&lt;/span&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;5&#39;s&#39;&lt;/span&gt;&lt;span class=&quot;color2&quot;&gt; : Six of the same dice : 50 points each&lt;/span&gt;&lt;br&gt;
-      &lt;br&gt;
-      
+    &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;1&#39;s&#39; &lt;/span&gt;&lt;span class=&quot;color2&quot;&gt;: The &#39;one&#39; dice : 100 points each *3 of a kind = 500 points*&lt;/span&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;span class=&quot;color1&quot;&gt;&#39;5&#39;s&#39;&lt;/span&gt;&lt;span class=&quot;color2&quot;&gt; : The &#39;five&#39; dice : 50 points each&lt;/span&gt;&lt;br&gt;
     &lt;/div&gt;
+	&lt;br&gt;
+	&lt;div&gt;[[&lt;&lt; Back.|home]]&lt;/div&gt;
     &lt;/span&gt;
   &lt;/div&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="botter" tags="" position="500.0000000000001,902.5000000000001" size="100,100">&lt;&lt;nobr&gt;&gt;
