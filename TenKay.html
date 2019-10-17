@@ -322,6 +322,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;&lt;set $strikecolor to &quot;green&quot;&gt;&gt; /* color of current player strikes */
 &lt;&lt;set $pointcolor to &quot;gold&quot;&gt;&gt; /* color of player points in list */
 &lt;&lt;set $namecolor to &quot;white&quot;&gt;&gt; /* color of player name in list */
+&lt;&lt;set $invalid to 0&gt;&gt;
 
 /* 
 ---PLAYER STRUCT---
@@ -835,7 +836,7 @@ Wait. [[OK.|rollcalc]]
 &lt;&lt;if $player[$pscore] &gt; $scoretowin&gt;&gt;
 &lt;&lt;if $winnerid is 0&gt;&gt;&lt;&lt;set $lastplayer to $pname&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;set $scoretowin to $player[$pscore]&gt;&gt;&lt;&lt;set $winnerid to $pname&gt;&gt;&lt;&lt;/if&gt;&gt;
-
+&lt;&lt;set $invalid to 0&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 You scored &lt;&lt;print $score&gt;&gt; points.
 [[OK.|selector]]</tw-passagedata><tw-passagedata pid="14" name="dice" tags="" position="1279,360" size="100,100">&lt;&lt;set _a to $dicenumber&gt;&gt;
@@ -856,7 +857,7 @@ You cannot remove a dice after it has been confirmed. [[Ok.|playgame]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $dicesrc[_a] to _c&gt;&gt;
 &lt;&lt;goto dicecalc&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="nodice" tags="" position="1286,194" size="100,100">You must select dice first. [[OK.|playgame]]</tw-passagedata><tw-passagedata pid="16" name="noscore" tags="" position="1085,197" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;set $canroll to 0&gt;&gt;&lt;&lt;set $player[$pstrike] += 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="nodice" tags="" position="1286,194" size="100,100">You must select dice first. [[OK.|playgame]]</tw-passagedata><tw-passagedata pid="16" name="noscore" tags="" position="1086.6666666666667,197" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;set $canroll to 0&gt;&gt;&lt;&lt;set $player[$pstrike] += 1&gt;&gt;
 &lt;&lt;for _a to 1; _a &lt;= 6; _a++&gt;&gt;
 &lt;&lt;set $track[_a] to 0&gt;&gt;
 &lt;&lt;set $check[_a] to 0&gt;&gt;
@@ -894,9 +895,13 @@ It is now the next &lt;&lt;print &quot;player&#39;s&quot;&gt;&gt; turn. [[OK.|se
 
 &lt;&lt;/for&gt;&gt;
 
-&lt;&lt;if _c isnot 3&gt;&gt;
+&lt;&lt;if _c isnot 3&gt;&gt;&lt;&lt;set $invalid += 1&gt;&gt;
+&lt;&lt;if $invalid &gt; 2&gt;&gt;
+You should probably read the rules, the dice you selected is invalid. 
+&lt;&lt;print &quot;\n&quot;&gt;&gt;[[Rules.|rulesgame]]&lt;&lt;print &quot;\n&quot;&gt;&gt;[[OK.|playgame]]
+&lt;&lt;else&gt;&gt;
 The dice selected is invalid. 
-[[OK.|playgame]]
+&lt;&lt;print &quot;\n&quot;&gt;&gt;[[OK.|playgame]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if _c is 3&gt;&gt;
@@ -1035,7 +1040,7 @@ Wait. [[OK.|stay]]
 
 &lt;&lt;/nobr&gt;&gt;&lt;&lt;if $pname isnot $lastplayer&gt;&gt;&lt;&lt;print $player[$pname] + &quot; has stolen the lead from &quot; + $player[$lastplayer] + &quot; with &quot; + $player[$pscore] + &quot; points, and won the game. Great Job!&quot; + &quot;\n&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;print $player[$pname] + &quot; has won the game with &quot; + $player[$pscore] + &quot; points. Great Job!&quot; + &quot;\n&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;link &quot;OK.&quot;&gt;&gt;&lt;&lt;script&gt;&gt;
 state.restart();
-&lt;&lt;endscript&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="rulesgame" tags="" position="198,902" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;endscript&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="rulesgame" tags="" position="198,902" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;set $invalid to 0&gt;&gt;
 &lt;div class=&quot;rulespnl2&quot;&gt;
 &lt;span class=&quot;rulespnl&quot;&gt;&lt;span class=&quot;colorsize1&quot;&gt;-- Rules --&lt;/span&gt;&lt;br&gt;
   
