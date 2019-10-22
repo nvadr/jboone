@@ -110,6 +110,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 .red{
   color: #ff0033;
   font-weight: bold;
+  font-size: 20px;
 }
 .green{
   color: #66cc00;
@@ -311,7 +312,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;/map&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="196,97" size="100,100">&lt;!-- /// Let&#39;s setup our variables here \\\ --&gt;
 
 &lt;&lt;set $playscore to 500&gt;&gt; /* minimum First score */
-&lt;&lt;set $scoretowin to 999&gt;&gt; /* player has to score higher to win */
+&lt;&lt;set $scoretowin to 6999&gt;&gt; /* player has to score higher to win */
 &lt;&lt;set $canroll to 0&gt;&gt; /* can the player roll? True (1) or False (0) */
 &lt;&lt;set $canstay to 0&gt;&gt; /* can the player stay? True (1) or False (0) */
 &lt;&lt;set $playerturn to 0&gt;&gt; /* holds the # of current roller. */
@@ -1105,7 +1106,9 @@ state.restart();
 Press &#39;Play&#39; to begin.
 &lt;&lt;else&gt;&gt;
 &lt;&lt;print $player[$pname] + &quot;&#39;s turn.&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;/span&gt;&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="StoryCaption" tags="" position="351,1100" size="100,100">&lt;&lt;if $player[$pname] === undefined&gt;&gt;Waiting for game to start...&lt;&lt;else&gt;&gt;&lt;&lt;nobr&gt;&gt;&lt;&lt;set _a to $score + $rscore&gt;&gt;&lt;&lt;/nobr&gt;&gt;&lt;span @class=&quot;$scorecolor&quot;&gt;Score : &lt;&lt;print _a&gt;&gt;&lt;/span&gt;
-&lt;span @class=&quot;$strikecolor&quot;&gt;Strikes : &lt;&lt;print $player[$pstrike]&gt;&gt;&lt;/span&gt;
+&lt;&lt;nobr&gt;&gt;&lt;&lt;if $player[$pstrike] &gt; 1&gt;&gt;&lt;&lt;set $strikecolor to &quot;red&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;&lt;&lt;set $strikecolor to &quot;green&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;&lt;span @class=&quot;$strikecolor&quot;&gt;Strikes : &lt;&lt;print $player[$pstrike]&gt;&gt;&lt;/span&gt;
 &lt;span class=&quot;gold&quot;&gt;Points : &lt;&lt;print $player[$pscore]&gt;&gt;&lt;/span&gt;
 
 &lt;span class=&quot;magenta&quot;&gt;--PLAYER SCORES--&lt;/span&gt;
@@ -1127,7 +1130,12 @@ Press &#39;Play&#39; to begin.
 &lt;&lt;set _pbot to $player[_p]&gt;&gt;
 &lt;&lt;set _x to $scoretowin * 0.85&gt;&gt;
 &lt;&lt;if _pscore &gt;= $scoretowin&gt;&gt;&lt;&lt;set $pointcolor to &quot;blue&quot;&gt;&gt;&lt;&lt;set $namecolor to &quot;blue&quot;&gt;&gt;&lt;&lt;elseif _pscore &gt; _x&gt;&gt;&lt;&lt;set $pointcolor to &quot;cyan&quot;&gt;&gt;&lt;&lt;set $namecolor to &quot;cyan&quot;&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $pointcolor to &quot;gold&quot;&gt;&gt;&lt;&lt;set $namecolor to &quot;white&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;span @class=&quot;$namecolor&quot;&gt;&lt;&lt;print _pname + &quot; has &quot;&gt;&gt;&lt;/span&gt;&lt;span @class=&quot;$pointcolor&quot;&gt;&lt;&lt;print _pscore&gt;&gt;&lt;/span&gt;&lt;span @class=&quot;$namecolor&quot;&gt;&lt;&lt;print &quot; points.&quot; + &quot;\n&quot;&gt;&gt;&lt;/span&gt;
+&lt;span @class=&quot;$namecolor&quot;&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;print _pname&gt;&gt;
+
+&lt;&lt;if _pstrikes is 1&gt;&gt;*&lt;&lt;elseif _pstrikes is 2&gt;&gt;**&lt;&lt;elseif _pstrikes is 3&gt;&gt;***&lt;&lt;else&gt;&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/nobr&gt;&gt;&lt;&lt;print &quot; has &quot;&gt;&gt;&lt;/span&gt;&lt;span @class=&quot;$pointcolor&quot;&gt;&lt;&lt;print _pscore&gt;&gt;&lt;/span&gt;&lt;span @class=&quot;$namecolor&quot;&gt;&lt;&lt;print &quot; points.&quot; + &quot;\n&quot;&gt;&gt;&lt;/span&gt;
 &lt;&lt;/for&gt;&gt;&lt;&lt;/nobr&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="dicecalc" tags="" position="1500,94" size="100,100">&lt;&lt;set _istrip to 0&gt;&gt;&lt;&lt;set $rscore to 0&gt;&gt;&lt;&lt;set $scorecolor to &quot;red&quot;&gt;&gt;
 &lt;!-- /// ------- CHECK FOR STRAIGHT --\\\\\\\\\ --&gt;
